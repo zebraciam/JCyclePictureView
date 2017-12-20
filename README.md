@@ -14,31 +14,31 @@ pod 'JCyclePictureView'
 ```swift
 let cyclePictureView: JCyclePictureView = JCyclePictureView(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 150), pictures: pictures)
         
-        // 滚动方向
-        cyclePictureView.direction = .left
+// 滚动方向
+cyclePictureView.direction = .left
         
-        // 自动滚动时间
-        cyclePictureView.autoScrollDelay = 3
+// 自动滚动时间
+cyclePictureView.autoScrollDelay = 3
         
-        // pageControl 位置
-        cyclePictureView.pageControlStyle = .center
+// pageControl 位置
+cyclePictureView.pageControlStyle = .center
         
-        // 默认显示图
-        cyclePictureView.placeholderImage = #imageLiteral(resourceName: "picture1")
+// 默认显示图
+cyclePictureView.placeholderImage = #imageLiteral(resourceName: "picture1")
         
-        // 高亮圆点
-//        cyclePictureView.pageControl.currentPageIndicatorTintColor
-//        cyclePictureView.pageControl.currentPageIndicatorImage
+// 高亮圆点
+cyclePictureView.pageControl.currentPageIndicatorTintColor
+cyclePictureView.pageControl.currentPageIndicatorImage
         
-        // 默认圆点
-//        cyclePictureView.pageControl.pageIndicatorTintColor
-//        cyclePictureView.pageControl.pageIndicatorImage
+// 默认圆点
+cyclePictureView.pageControl.pageIndicatorTintColor
+cyclePictureView.pageControl.pageIndicatorImage
 
-        // 点击回调
-        cyclePictureView.didTapAtIndexHandle = { index in
+// 点击回调
+cyclePictureView.didTapAtIndexHandle = { index in
             
-            print("点击了第 \(index + 1) 张图片")
-        }
+    print("点击了第 \(index + 1) 张图片")
+}
         
-        self.view.addSubview(cyclePictureView)
+self.view.addSubview(cyclePictureView)
 ```
