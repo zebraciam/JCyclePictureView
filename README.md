@@ -4,4 +4,5 @@
 ## CocoaPods
 
 * 支持CocoaPods
+
 pod 'JCyclePictureView' 
