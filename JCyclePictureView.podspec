@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "Zebra" => "mr_banma@126.com" }
 
-  s.source       = { :git => "https://github.com/GitHubZebra/JKit.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/GitHubZebra/JCyclePictureView.git", :tag => s.version }
 
   s.source_files  = "JCyclePictureView/*.swift"
 
