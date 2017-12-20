@@ -104,6 +104,7 @@ cyclePictureView.register(<#T##nibs: [UINib?]##[UINib?]#>, identifiers: <#T##[St
 ## Example
 
 示例代码见ViewController.swift
+实现逻辑：http://www.jianshu.com/p/e13992f78aef
 
 ## Author
 
