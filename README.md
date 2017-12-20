@@ -107,4 +107,4 @@ cyclePictureView.register(<#T##nibs: [UINib?]##[UINib?]#>, identifiers: <#T##[St
 
 ## Author
 
-ChenJie，mr_banma@126.com
+Zebra，mr_banma@126.com
