@@ -93,3 +93,10 @@ cyclePictureView.register([CustomCell.self], identifiers: ["CustomCell"]) { (col
 // 自定义 nib cell
 cyclePictureView.register(<#T##nibs: [UINib?]##[UINib?]#>, identifiers: <#T##[String]#>, customCellHandle: <#T##JCyclePictureViewCustomCellHandle##JCyclePictureViewCustomCellHandle##(UICollectionView, IndexPath) -> UICollectionViewCell#>)
 ```
+## Example
+
+示例代码见ViewController.swift
+
+## Author
+
+ChenJie，mr_banma@126.com
