@@ -404,6 +404,7 @@ extension JCyclePictureView: UIScrollViewDelegate {
         }
     }
     
+    // 定时器事件
     @objc internal func timerHandle() {
         
         var item: Int = 0
