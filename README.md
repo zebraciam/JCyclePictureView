@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/JCyclePictureView.svg?style=flat)](http://cocoapods.org/pods/JCyclePictureView)
 [![Platform](https://img.shields.io/cocoapods/p/JCyclePictureView.svg?style=flat)](http://cocoapods.org/pods/JCyclePictureView)
 
-<img src="https://github.com/GitHubZebra/JCyclePictureView/1.gif" width="400" align="center">
+<img src="https://github.com/GitHubZebra/JCyclePictureView/blob/master/1.gif" width="400" align="center">
 
 ## CocoaPods
 
