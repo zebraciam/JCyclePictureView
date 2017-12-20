@@ -71,5 +71,5 @@ cyclePictureView.register([CustomCell.self], identifiers: ["CustomCell"]) { (col
 }
         
 // 自定义 nib cell
-//        cyclePictureView.register(<#T##nibs: [UINib?]##[UINib?]#>, identifiers: <#T##[String]#>, customCellHandle: <#T##JCyclePictureViewCustomCellHandle##JCyclePictureViewCustomCellHandle##(UICollectionView, IndexPath) -> UICollectionViewCell#>)
+cyclePictureView.register(<#T##nibs: [UINib?]##[UINib?]#>, identifiers: <#T##[String]#>, customCellHandle: <#T##JCyclePictureViewCustomCellHandle##JCyclePictureViewCustomCellHandle##(UICollectionView, IndexPath) -> UICollectionViewCell#>)
 ```
