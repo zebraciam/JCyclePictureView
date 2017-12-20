@@ -1,6 +1,11 @@
 # Swift图片轮播 JCyclePictureView
 用 UICollectionView 写的无限滚动轮播图，支持自定义 cell、滚动方向等。
 
+[![License](https://img.shields.io/cocoapods/l/JCyclePictureView.svg?style=flat)](http://cocoapods.org/pods/JCyclePictureView)
+[![Platform](https://img.shields.io/cocoapods/p/JCyclePictureView.svg?style=flat)](http://cocoapods.org/pods/JCyclePictureView)
+
+<img src="https://github.com/GitHubZebra/JCyclePictureView/1.gif" width="400" align="center">
+
 ## CocoaPods
 
 * 支持CocoaPods
