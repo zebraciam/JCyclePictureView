@@ -15,6 +15,21 @@ pod 'JCyclePictureView'
 ```
 <!--注意：在pod install的时候，比较慢(可能网速问题)，如果在pod update的时候就比较快了，此无解。-->
 
+## Support
+
+* 支持纯图片
+* 支持文本图片结合
+* 支持横向滚动
+* 支持纵向滚动
+* 支持手势滑动
+* 支持点击回调
+* 支持图片数据的延时加载
+* 支持没有数据，占位图占位
+* 支持本地图片显示及与网络图的混合显示
+* 支持系统UIPageControl位置设置
+* 支持纯文本
+* 支持UIPageControl.currentPage图片修改样式
+
 ## Usage
 ```swift
 // 数据源
