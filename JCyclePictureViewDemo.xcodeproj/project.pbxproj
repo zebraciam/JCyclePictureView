@@ -12,7 +12,8 @@
 		158E3BAF1FEA07E4006ABDDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158E3BAD1FEA07E4006ABDDE /* Main.storyboard */; };
 		158E3BB11FEA07E4006ABDDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158E3BB01FEA07E4006ABDDE /* Assets.xcassets */; };
 		158E3BB41FEA07E4006ABDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158E3BB21FEA07E4006ABDDE /* LaunchScreen.storyboard */; };
-		158E3BBD1FEA0829006ABDDE /* JCyclePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E3BBC1FEA0828006ABDDE /* JCyclePictureView.swift */; };
+		158E3BC11FEA1499006ABDDE /* JCyclePictureView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 158E3BC01FEA1499006ABDDE /* JCyclePictureView.podspec */; };
+		158E3BC41FEA1569006ABDDE /* JCyclePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E3BC31FEA1569006ABDDE /* JCyclePictureView.swift */; };
 		8206955174D59986B3D0DF4E /* Pods_JCyclePictureViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93173FE7F7E095797C5FB95D /* Pods_JCyclePictureViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +25,8 @@
 		158E3BB01FEA07E4006ABDDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158E3BB31FEA07E4006ABDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		158E3BB51FEA07E4006ABDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		158E3BBC1FEA0828006ABDDE /* JCyclePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCyclePictureView.swift; sourceTree = "<group>"; };
+		158E3BC01FEA1499006ABDDE /* JCyclePictureView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JCyclePictureView.podspec; sourceTree = "<group>"; };
+		158E3BC31FEA1569006ABDDE /* JCyclePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCyclePictureView.swift; sourceTree = "<group>"; };
 		4FDBB9DD53A7DB3E820F64A0 /* Pods-JCyclePictureViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCyclePictureViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JCyclePictureViewDemo/Pods-JCyclePictureViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7624EF10EF88EDD55E379012 /* Pods-JCyclePictureViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCyclePictureViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JCyclePictureViewDemo/Pods-JCyclePictureViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		93173FE7F7E095797C5FB95D /* Pods_JCyclePictureViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCyclePictureViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,8 @@
 		158E3B9D1FEA07E4006ABDDE = {
 			isa = PBXGroup;
 			children = (
+				158E3BC01FEA1499006ABDDE /* JCyclePictureView.podspec */,
+				158E3BC21FEA1569006ABDDE /* JCyclePictureView */,
 				158E3BA81FEA07E4006ABDDE /* JCyclePictureViewDemo */,
 				158E3BA71FEA07E4006ABDDE /* Products */,
 				F7A9513F5AEA782F6E70E04A /* Pods */,
@@ -65,7 +69,6 @@
 			children = (
 				158E3BA91FEA07E4006ABDDE /* AppDelegate.swift */,
 				158E3BAB1FEA07E4006ABDDE /* ViewController.swift */,
-				158E3BBB1FEA0828006ABDDE /* JCyclePictureView */,
 				158E3BAD1FEA07E4006ABDDE /* Main.storyboard */,
 				158E3BB01FEA07E4006ABDDE /* Assets.xcassets */,
 				158E3BB21FEA07E4006ABDDE /* LaunchScreen.storyboard */,
@@ -74,10 +77,10 @@
 			path = JCyclePictureViewDemo;
 			sourceTree = "<group>";
 		};
-		158E3BBB1FEA0828006ABDDE /* JCyclePictureView */ = {
+		158E3BC21FEA1569006ABDDE /* JCyclePictureView */ = {
 			isa = PBXGroup;
 			children = (
-				158E3BBC1FEA0828006ABDDE /* JCyclePictureView.swift */,
+				158E3BC31FEA1569006ABDDE /* JCyclePictureView.swift */,
 			);
 			path = JCyclePictureView;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				158E3BB41FEA07E4006ABDDE /* LaunchScreen.storyboard in Resources */,
 				158E3BB11FEA07E4006ABDDE /* Assets.xcassets in Resources */,
+				158E3BC11FEA1499006ABDDE /* JCyclePictureView.podspec in Resources */,
 				158E3BAF1FEA07E4006ABDDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,7 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				158E3BBD1FEA0829006ABDDE /* JCyclePictureView.swift in Sources */,
+				158E3BC41FEA1569006ABDDE /* JCyclePictureView.swift in Sources */,
 				158E3BAC1FEA07E4006ABDDE /* ViewController.swift in Sources */,
 				158E3BAA1FEA07E4006ABDDE /* AppDelegate.swift in Sources */,
 			);

@@ -9,12 +9,12 @@
 import UIKit
 import Kingfisher
 
-private let JCyclePictureCellIdentifier: String = "JCyclePictureViewCell"
+internal let JCyclePictureCellIdentifier: String = "JCyclePictureViewCell"
 
-typealias JCyclePictureViewCustomCellHandle = (_ collectionView: UICollectionView, _ indexPath: IndexPath, _ picture: String) -> UICollectionViewCell
+public typealias JCyclePictureViewCustomCellHandle = (_ collectionView: UICollectionView, _ indexPath: IndexPath, _ picture: String) -> UICollectionViewCell
 
 /// 滚动方向
-enum JCyclePictureViewRollingDirection : Int {
+public enum JCyclePictureViewRollingDirection : Int {
     
     case top
     
@@ -26,7 +26,7 @@ enum JCyclePictureViewRollingDirection : Int {
 }
 
 /// PageControl 的位置
-enum JPageControlStyle : Int {
+public enum JPageControlStyle : Int {
     
     case center
     
@@ -38,13 +38,13 @@ enum JPageControlStyle : Int {
 class JCyclePictureView: UIView {
 
     /// 图片数据源
-    var pictures: [String] = []
+    open var pictures: [String] = []
     
     /// 默认图
-    var placeholderImage: UIImage?
+    open var placeholderImage: UIImage?
     
     /// 标题数据源
-    var titles: [String?] = [] {
+    open var titles: [String?] = [] {
         
         willSet {
             
@@ -60,13 +60,13 @@ class JCyclePictureView: UIView {
     }
     
     /// 点击图片回调  从 0 开始
-    var didTapAtIndexHandle: (( _: Int ) -> Void)?
+    open var didTapAtIndexHandle: (( _: Int ) -> Void)?
     
     /// default is 2.0f, 如果小于0.5不自动播放
-    var autoScrollDelay: TimeInterval = 2
+    open var autoScrollDelay: TimeInterval = 2
     
     /// 滚动方向
-    var direction: JCyclePictureViewRollingDirection = .left {
+    open var direction: JCyclePictureViewRollingDirection = .left {
         
         willSet {
             
@@ -83,7 +83,7 @@ class JCyclePictureView: UIView {
     }
     
     /// pageControl 的对齐方式
-    var pageControlStyle: JPageControlStyle = .center {
+    open var pageControlStyle: JPageControlStyle = .center {
         
         willSet {
             
@@ -107,10 +107,10 @@ class JCyclePictureView: UIView {
     }
     
     /// 设置图片的ContentMode
-    var imageContentMode: UIViewContentMode?
+    open var imageContentMode: UIViewContentMode?
     
     /// 自定义 cell 的回调
-    private var customCellHandle: JCyclePictureViewCustomCellHandle?
+    open var customCellHandle: JCyclePictureViewCustomCellHandle?
     
     /// 如果需要自定义 AnyClass cell 需调用下面方法
     ///
@@ -118,7 +118,7 @@ class JCyclePictureView: UIView {
     ///   - cellClasss: [UICollectionViewCell.self]
     ///   - identifiers: [identifier]
     ///   - customCellHandle: cellForItemAt 回调
-    func register(_ cellClasss: [Swift.AnyClass?], identifiers: [String], customCellHandle: @escaping JCyclePictureViewCustomCellHandle) {
+    open func register(_ cellClasss: [Swift.AnyClass?], identifiers: [String], customCellHandle: @escaping JCyclePictureViewCustomCellHandle) {
         
         self.customCellHandle = customCellHandle
 
@@ -134,7 +134,7 @@ class JCyclePictureView: UIView {
     ///   - nibs: [UINib]
     ///   - identifiers: [identifier]
     ///   - customCellHandle: cellForItemAt 回调
-    func register(_ nibs: [UINib?], identifiers: [String], customCellHandle: @escaping JCyclePictureViewCustomCellHandle) {
+    open func register(_ nibs: [UINib?], identifiers: [String], customCellHandle: @escaping JCyclePictureViewCustomCellHandle) {
         
         self.customCellHandle = customCellHandle
         
@@ -144,9 +144,9 @@ class JCyclePictureView: UIView {
         }
     }
     
-    private var timer: Timer?
+    internal var timer: Timer?
     
-    lazy private var titleBgView: UIView = {
+    lazy internal var titleBgView: UIView = {
         
         let titleBgView: UIView = UIView(frame: CGRect(x: 0, y: self.frame.height - 20, width: self.frame.width, height: 20))
         
@@ -157,7 +157,7 @@ class JCyclePictureView: UIView {
         return titleBgView
     }()
     
-    lazy var titleLab: UILabel = {
+    lazy internal var titleLab: UILabel = {
         
         let pointSize: CGSize = self.pageControl.size(forNumberOfPages: self.pictures.count)
         
@@ -172,7 +172,7 @@ class JCyclePictureView: UIView {
         return titleLab
     }()
     
-    private var datas: [String]? {
+    var datas: [String]? {
         
         var firstIndex = 0
         
@@ -197,7 +197,7 @@ class JCyclePictureView: UIView {
         return [pictures[firstIndex] ,pictures[secondIndex] ,pictures[thirdIndex]]
     }
     
-    private var index: Int = 0 {
+    internal var index: Int = 0 {
         
         willSet {
             
@@ -208,7 +208,7 @@ class JCyclePictureView: UIView {
         }
     }
     
-    private lazy var contentOffset: CGFloat = {
+    internal lazy var contentOffset: CGFloat = {
         
         switch self.direction {
         case .left, .right:
@@ -219,7 +219,7 @@ class JCyclePictureView: UIView {
         }
     }()
     
-    private lazy var scrollPosition: UICollectionViewScrollPosition = {
+    internal lazy var scrollPosition: UICollectionViewScrollPosition = {
         
         switch self.direction {
         case .left:
@@ -237,7 +237,7 @@ class JCyclePictureView: UIView {
     }()
     
     /// PageControl
-    lazy var pageControl: JPageControl = {
+    open lazy var pageControl: JPageControl = {
         
         let pageControl: JPageControl = JPageControl(frame: CGRect(x: 0, y: self.frame.size.height - 20, width: self.frame.size.width, height: 20))
         
@@ -252,11 +252,11 @@ class JCyclePictureView: UIView {
         return pageControl
     }()
     
-    private lazy var collectionView: UICollectionView = {
+    internal lazy var collectionView: UICollectionView = {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
-        layout.itemSize = frame.size
+        layout.itemSize = self.frame.size
         
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
@@ -295,7 +295,7 @@ class JCyclePictureView: UIView {
         return collectionView
     }()
     
-    convenience init(frame: CGRect, pictures: [String]?) {
+    public convenience init(frame: CGRect, pictures: [String]?) {
         
         self.init(frame: frame)
         
@@ -381,7 +381,7 @@ extension JCyclePictureView: UIScrollViewDelegate {
     }
     
     /// 添加定时器
-    private func startTimer() {
+    internal func startTimer() {
         
         self.stopTimer()
         
@@ -394,7 +394,7 @@ extension JCyclePictureView: UIScrollViewDelegate {
     }
     
     //关闭定时器
-    private func stopTimer() {
+    internal func stopTimer() {
         
         if let _ = timer?.isValid {
             
@@ -404,7 +404,7 @@ extension JCyclePictureView: UIScrollViewDelegate {
         }
     }
     
-    @objc private func timerHandle() {
+    @objc internal func timerHandle() {
         
         var item: Int = 0
         
@@ -463,10 +463,10 @@ extension JCyclePictureView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 }
 
-internal class JPageControl: UIPageControl {
+class JPageControl: UIPageControl {
     
     /// 设置高亮显示图片
-    var currentPageIndicatorImage: UIImage? {
+    public var currentPageIndicatorImage: UIImage? {
         
         didSet {
             
@@ -475,7 +475,7 @@ internal class JPageControl: UIPageControl {
     }
     
     /// 设置默认显示图片
-    var pageIndicatorImage: UIImage? {
+    public var pageIndicatorImage: UIImage? {
         
         didSet {
             
@@ -483,7 +483,7 @@ internal class JPageControl: UIPageControl {
         }
     }
     
-    override var currentPage: Int {
+    public override var currentPage: Int {
         
         willSet {
             
@@ -491,7 +491,7 @@ internal class JPageControl: UIPageControl {
         }
     }
     
-    func updateDots() {
+    internal func updateDots() {
         
         if self.currentPageIndicatorImage != nil || self.pageIndicatorImage != nil {
             
@@ -514,7 +514,7 @@ internal class JPageControl: UIPageControl {
         }
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         
         super.init(frame: frame)
     }
