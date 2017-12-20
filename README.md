@@ -6,6 +6,14 @@
 
 <img src="https://github.com/GitHubZebra/JCyclePictureView/blob/master/1.gif" width="400" align="center">
 
+## Issues
+如果使用过程中，有什么问题欢迎issues。
+
+
+## Swift4
+
+Swift4 及以上版本
+
 ## CocoaPods
 
 * 支持CocoaPods
