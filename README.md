@@ -20,8 +20,10 @@ Swift4 及以上版本
  
 ```ruby
 pod 'JCyclePictureView' 
+<!--如若出现 Unable to find a pod with name, author, summary, or description matching `JCyclePictureView’ 错误，
+请先运行 $rm ~/Library/Caches/CocoaPods/search_index.json.-->
 ```
-<!--注意：在pod install的时候，比较慢(可能网速问题)，如果在pod update的时候就比较快了，此无解。-->
+
 
 ## Support
 
