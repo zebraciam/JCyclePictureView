@@ -35,7 +35,7 @@ public enum JPageControlStyle : Int {
     case right
 }
 
-class JCyclePictureView: UIView {
+public class JCyclePictureView: UIView {
 
     /// 图片数据源
     open var pictures: [String] = []
@@ -320,17 +320,17 @@ class JCyclePictureView: UIView {
 
 extension JCyclePictureView: UIScrollViewDelegate {
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
         self.stopTimer()
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         self.startTimer()
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         var offset: CGFloat = 0
         
@@ -404,7 +404,6 @@ extension JCyclePictureView: UIScrollViewDelegate {
         }
     }
     
-    // 定时器事件
     @objc internal func timerHandle() {
         
         var item: Int = 0
@@ -424,12 +423,12 @@ extension JCyclePictureView: UIScrollViewDelegate {
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension JCyclePictureView: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return 3
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let customCellHandle = self.customCellHandle {
             
@@ -458,13 +457,13 @@ extension JCyclePictureView: UICollectionViewDelegate, UICollectionViewDataSourc
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         self.didTapAtIndexHandle?(indexPath.item)
     }
 }
 
-class JPageControl: UIPageControl {
+public class JPageControl: UIPageControl {
     
     /// 设置高亮显示图片
     public var currentPageIndicatorImage: UIImage? {
@@ -520,7 +519,7 @@ class JPageControl: UIPageControl {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JCyclePictureView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "用 UICollectionView 写的无限滚动轮播图，支持自定义 cell、滚动方向等。"
 
   s.homepage     = "https://github.com/GitHubZebra/JCyclePictureView"
