@@ -38,7 +38,24 @@ public enum JPageControlStyle : Int {
 public class JCyclePictureView: UIView {
 
     /// 图片数据源
-    open var pictures: [String] = []
+    open var pictures: [String] = [] {
+        
+        didSet {
+            
+            if self.pictures.count > 0 {
+                
+                self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: self.scrollPosition, animated: false)
+                
+                self.bringSubview(toFront: self.pageControl)
+                
+                self.pageControl.numberOfPages = self.pictures.count
+                
+                self.pageControl.currentPage = 0
+                
+                self.startTimer()
+            }
+        }
+    }
     
     /// 默认图
     open var placeholderImage: UIImage?
