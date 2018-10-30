@@ -46,7 +46,7 @@ public class JCyclePictureView: UIView {
                 
                 self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: self.scrollPosition, animated: false)
 
-                self.bringSubview(toFront: self.pageControl)
+                self.bringSubviewToFront(self.pageControl)
 
                 self.pageControl.numberOfPages = self.pictures.count
 
@@ -71,7 +71,7 @@ public class JCyclePictureView: UIView {
                 
                 self.titleLab.text = titles.count > self.index ? titles[self.index] : ""
                 
-                self.bringSubview(toFront: self.pageControl)
+                self.bringSubviewToFront(self.pageControl)
             }
         }
     }
@@ -124,7 +124,7 @@ public class JCyclePictureView: UIView {
     }
     
     /// 设置图片的ContentMode
-    open var imageContentMode: UIViewContentMode?
+    open var imageContentMode: UIView.ContentMode?
     
     /// 自定义 cell 的回调
     open var customCellHandle: JCyclePictureViewCustomCellHandle?
@@ -236,20 +236,20 @@ public class JCyclePictureView: UIView {
         }
     }()
     
-    internal lazy var scrollPosition: UICollectionViewScrollPosition = {
+    internal lazy var scrollPosition: UICollectionView.ScrollPosition = {
         
         switch self.direction {
         case .left:
-            return UICollectionViewScrollPosition.left
+            return UICollectionView.ScrollPosition.left
             
         case .right:
-            return UICollectionViewScrollPosition.right
+            return UICollectionView.ScrollPosition.right
             
         case .top:
-            return UICollectionViewScrollPosition.top
+            return UICollectionView.ScrollPosition.top
             
         case .bottom:
-            return  UICollectionViewScrollPosition.bottom
+            return  UICollectionView.ScrollPosition.bottom
         }
     }()
     
@@ -275,7 +275,7 @@ public class JCyclePictureView: UIView {
         
         layout.itemSize = self.frame.size
         
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         layout.minimumLineSpacing = 0
         
@@ -323,7 +323,7 @@ public class JCyclePictureView: UIView {
         
         self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: self.scrollPosition, animated: false)
         
-        self.bringSubview(toFront: self.pageControl)
+        self.bringSubviewToFront(self.pageControl)
         
         self.startTimer()
     }
@@ -406,7 +406,7 @@ extension JCyclePictureView: UIScrollViewDelegate {
             
             self.timer = Timer.scheduledTimer(timeInterval: self.autoScrollDelay, target: self, selector: #selector(timerHandle), userInfo: nil, repeats: true)
             
-            RunLoop.main.add(self.timer!, forMode: .commonModes)
+            RunLoop.main.add(self.timer!, forMode: RunLoop.Mode.common)
         }
     }
     
