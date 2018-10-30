@@ -45,13 +45,13 @@ public class JCyclePictureView: UIView {
             if self.pictures.count > 0 {
                 
                 self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: self.scrollPosition, animated: false)
-                
+
                 self.bringSubview(toFront: self.pageControl)
-                
+
                 self.pageControl.numberOfPages = self.pictures.count
-                
+
                 self.pageControl.currentPage = 0
-                
+
                 self.startTimer()
             }
         }
@@ -63,13 +63,13 @@ public class JCyclePictureView: UIView {
     /// 标题数据源
     open var titles: [String?] = [] {
         
-        willSet {
+        didSet {
             
-            if newValue.count > 0 {
+            if titles.count > 0 {
                 
                 self.pageControlStyle = .right
                 
-                self.titleLab.text = newValue.count > self.index ? newValue[self.index] : ""
+                self.titleLab.text = titles.count > self.index ? titles[self.index] : ""
                 
                 self.bringSubview(toFront: self.pageControl)
             }
@@ -104,9 +104,9 @@ public class JCyclePictureView: UIView {
         
         willSet {
             
-            guard self.titles.count == 0 else { return }
+            guard self.titles.count > 0 else { return }
             
-            let pointSize: CGSize = self.pageControl.size(forNumberOfPages: self.pictures.count)
+            let pointSize: CGSize = self.pageControl.size(forNumberOfPages: self.titles.count)
             
             let page_x: CGFloat = (self.pageControl.bounds.size.width - pointSize.width) / 2
             
@@ -198,13 +198,13 @@ public class JCyclePictureView: UIView {
         var thirdIndex = 0
 
         switch pictures.count {
-            
+
         case 0:
             return []
-            
+
         case 1:
             break
-            
+
         default:
             firstIndex = (self.index - 1) < 0 ? pictures.count - 1 : self.index - 1
             secondIndex = self.index
