@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JCyclePictureView"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "用 UICollectionView 写的无限滚动轮播图，支持自定义 cell、滚动方向等。"
 
   s.homepage     = "https://github.com/GitHubZebra/JCyclePictureView"
@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
 
   s.dependency "Kingfisher"
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 
 end
