@@ -476,7 +476,7 @@ extension JCyclePictureView: UICollectionViewDelegate, UICollectionViewDataSourc
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.didTapAtIndexHandle?(indexPath.item)
+        self.didTapAtIndexHandle?(pageControl.currentPage)
     }
 }
 
