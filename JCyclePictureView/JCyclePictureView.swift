@@ -80,7 +80,12 @@ public class JCyclePictureView: UIView {
     open var didTapAtIndexHandle: (( _: Int ) -> Void)?
     
     /// default is 2.0f, 如果小于0.5不自动播放
-    open var autoScrollDelay: TimeInterval = 2
+    open var autoScrollDelay: TimeInterval = 2 {
+        didSet {
+            stopTimer()
+            startTimer()
+        }
+    }
     
     /// 滚动方向
     open var direction: JCyclePictureViewRollingDirection = .left {
