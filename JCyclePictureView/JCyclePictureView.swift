@@ -475,8 +475,9 @@ extension JCyclePictureView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        self.didTapAtIndexHandle?(indexPath.item)
+        // 点击事件
+        // self.didTapAtIndexHandle?(indexPath.item)
+        self.didTapAtIndexHandle?(self.index)
     }
 }
 
